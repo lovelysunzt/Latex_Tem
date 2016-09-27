@@ -1,0 +1,32 @@
+# REDUNDANT ALIGNEMNTS (ALL POSSIBLE)
+# Sample	PE Reads Aligned	SE Reads Aligned	Total Reads Aligned
+a2074mu.trimmed.Zeamays_v3.unique.sam.stats	2 x 21,193,336	2,439,143	2 x 22,412,907
+a2074wt.trimmed.Zeamays_v3.unique.sam.stats	2 x 22,062,884	2,434,900	2 x 23,280,334
+a2098mu-32M.trimmed.Zeamays_v3.unique.sam.stats	2 x 14,954,797	1,653,513	2 x 15,781,553
+a2116mu.trimmed.Zeamays_v3.unique.sam.stats	2 x 22,225,265	2,538,450	2 x 23,494,490
+a2116wt.trimmed.Zeamays_v3.unique.sam.stats	2 x 25,706,976	3,310,070	2 x 27,362,011
+a2133mu.trimmed.Zeamays_v3.unique.sam.stats	2 x 20,877,775	2,390,527	2 x 22,073,038
+a2133wt.trimmed.Zeamays_v3.unique.sam.stats	2 x 25,343,061	2,601,017	2 x 26,643,569
+a2192mu.trimmed.Zeamays_v3.unique.sam.stats	2 x 22,441,680	2,548,114	2 x 23,715,737
+a2192wt.trimmed.Zeamays_v3.unique.sam.stats	2 x 23,112,972	2,500,500	2 x 24,363,222
+aM32.trimmed.Zeamays_v3.unique.sam.stats	2 x 21,611,773	2,356,919	2 x 22,790,232
+SUM	2 x 219,530,519	24,773,153	2 x 231,917,095
+AVERAGE	2 x 21,953,051	2,477,315	2 x 23,191,709
+MEDIAN	2 x 22,144,074	2,469,821	2 x 23,387,412
+
+# UNIQUE ALIGNEMNTS (SINGLE LOCI)
+# Sample	PE Reads Aligned	SE Reads Aligned	Total Reads Aligned
+a2074mu.trimmed.Zeamays_v3.unique.sam.stats	2 x 20,248,666	2,339,050	2 x 21,418,191
+a2074wt.trimmed.Zeamays_v3.unique.sam.stats	2 x 20,893,413	2,346,093	2 x 22,066,459
+a2098mu-32M.trimmed.Zeamays_v3.unique.sam.stats	2 x 13,482,697	1,586,846	2 x 14,276,120
+a2116mu.trimmed.Zeamays_v3.unique.sam.stats	2 x 18,046,885	2,306,206	2 x 19,199,988
+a2116wt.trimmed.Zeamays_v3.unique.sam.stats	2 x 24,184,281	3,154,333	2 x 25,761,447
+a2133mu.trimmed.Zeamays_v3.unique.sam.stats	2 x 20,061,651	2,316,386	2 x 21,219,844
+a2133wt.trimmed.Zeamays_v3.unique.sam.stats	2 x 24,370,325	2,527,221	2 x 25,633,935
+a2192mu.trimmed.Zeamays_v3.unique.sam.stats	2 x 21,536,780	2,469,959	2 x 22,771,759
+a2192wt.trimmed.Zeamays_v3.unique.sam.stats	2 x 22,206,572	2,431,970	2 x 23,422,557
+aM32.trimmed.Zeamays_v3.unique.sam.stats	2 x 19,504,088	2,266,579	2 x 20,637,377
+SUM	2 x 204,535,358	23,744,643	2 x 216,407,679
+AVERAGE	2 x 20,453,535	2,374,464	2 x 21,640,767
+MEDIAN	2 x 20,571,039	2,342,571	2 x 21,742,325
+

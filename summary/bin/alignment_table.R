@@ -1,5 +1,27 @@
 #####alignment
-alignment_table<-function(trim_filename,align_filename,out.path,out.file){
+alignment_table<-function(trim_filename,align_filename,out.path,out.file="alignment.summary_table.tex"){
+  Fix.before<-paste(
+    "\\begin{table}[H]",
+    "\\centering",
+    "\\caption{Alignment Summary}",
+    "\\label{tab:alignment}",
+    "\\medskip",
+    "\\tiny",
+    "\\begin{tabular}{@{} lS[table-format=8.0]S[table-format=9.0]",
+      "S[table-format=1.0]S[table-format=8.0]",
+      "S[table-format=9.0]@{}}",
+    "\\toprule",
+    "& \\multicolumn{3}{c}{\\textsc{\\scriptsize Quality Trimmed Reads}} & \\multicolumn{2}{c}{\\textsc{\\scriptsize Alignment to Reference Genome}} \\\\",
+    "\\cmidrule(lr{0.75em}){2-4}",
+    "\\cmidrule(lr{0.75em}){5-6}",
+    "&{\\scriptsize No. Reads} & \\splitcell{ \\scriptsize Base Pairs \\\\ \\scriptsize(bp)}   & \\splitcell{\\scriptsize Length \\\\ \\scriptsize (bp)} &  \\splitcell{\\scriptsize Alignments\\\\ \\scriptsize ($\\geqslant$1 Location)}  &   \\splitcell{\\scriptsize Unique Alignments \\\\ \\scriptsize (Single Location)}\\\\ ",
+    "\\midrule",
+    sep="\n"
+  )
+  cat(Fix.before,file=paste(out.path,out.file,sep="/"),fill=T,append=T)
+  
+  
+  ####main part
   in_trim_table<-read.delim(trim_filename,header = F,comment.char="!")
   sub_trim_table<-in_trim_table[((which(in_trim_table[,1]=="# TOTALS")+1):nrow(in_trim_table)),c(1,5,7,9)]
   #print(sub_trim_table)
@@ -31,8 +53,8 @@ alignment_table<-function(trim_filename,align_filename,out.path,out.file){
   
   
   out<-as.data.frame(cbind(sub_trim_table,total_align,uniq_align,dat[,4:5]))
-  out[,5]<-paste0(out[,5],"(",out[,7],")")
-  out[,6]<-paste0(out[,6],"(",out[,8],")")
+  out[,5]<-paste0(out[,5]," (",out[,7],")")
+  out[,6]<-paste0(out[,6]," (",out[,8],")")
   out<-out[,1:6]
   out[,5]<-gsub("%","\\\\%",out[,5])
   out[,6]<-gsub("%","\\\\%",out[,6])
@@ -49,12 +71,18 @@ alignment_table<-function(trim_filename,align_filename,out.path,out.file){
   }
   
   
-  #write.table(out,paste0(gsub(".txt","",align_filename),"_convert.txt"),quote=F,row.names = F,col.names = F)
-
+  ####the end
+  Fix.end<-paste(
+    "\\bottomrule",
+    "\\end{tabular}",
+    "\\end{table}",
+    sep="\n"
+  )
+  cat(Fix.end,file=paste(out.path,out.file,sep="/"),fill=T,append=T)
 }
 
 
-alignment_table("trimming.summary.txt","alignment.txt","./","align_latex")
+alignment_table("trimming.summary.txt","alignment.txt","./","align_latex.tex")
 
 
 
